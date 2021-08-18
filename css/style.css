@@ -1,6 +1,5 @@
 body {
 	display: grid;
-	border: 2px solid red;
 }
 
 /* Nav Styles */
@@ -48,9 +47,9 @@ button.btn-style {
 	color: white;
 }
 
-/*Main content*/
+/*Start content*/
 
-.container-content {
+.start-content {
 	display: grid;
 	background: #1bbc9b;
 	padding: 50px;
@@ -59,12 +58,12 @@ button.btn-style {
 	text-align: center;
 }
 
-.container-content img {
+.start-content img {
 	width: 300px;
 	height: 375px;
 }
 
-.container-content h1 {
+.start-content h1 {
 	color: white;
 	font-weight: bold;
 }
@@ -95,7 +94,7 @@ button.btn-style {
 	justify-self: start;
 }
 
-.style-star{
+.style-star-white {
 	margin: 10px;
 	color: white;
 }
@@ -112,7 +111,33 @@ button.btn-style {
 	font-size: 16px;
 }
 
+/* Portfolio */
 
+.portfolio{
+	padding: 10px 50px;
+	text-align: center;
+}
+
+.images {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, auto);
+	justify-content: center;
+	align-items: center;
+}
+
+.imgItem {
+	border-radius: 5px;
+}
+
+
+.portfolio .aesthetic-design div {
+	display: block;
+	background: #000;
+	height: 3px;
+	width: 25%;
+	border-radius: 5px;
+}
 
 /* Responsives */
 
@@ -132,5 +157,13 @@ button.btn-style {
 
 	.nav-list {
 		display: none;
+	}
+
+	.images {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(2, auto);
+		justify-content: center;
+		align-items: center;
 	}
 }
