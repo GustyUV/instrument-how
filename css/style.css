@@ -23,7 +23,6 @@ button.btn-style {
 	background: #1ebc9b;
 	font-weight: bold;
 	color: white;
-	but
 }
 
 
@@ -75,13 +74,12 @@ button.btn-style {
 	grid-gap: 20px;
 	justify-content: center;
 	align-items: center;
-	
 }
 
 .aesthetic-design div {
 	display: block;
 	background: rgba(255, 255, 255, 1.0);
-	height: 5px;
+	height: 3px;
 	width: 25%;
 	border-radius: 5px;
 }
@@ -126,8 +124,47 @@ button.btn-style {
 	align-items: center;
 }
 
-.imgItem {
+div.imgItem {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1;
+	grid-template-rows: 1;
+}
+
+.imgItem img {
 	border-radius: 5px;
+	grid-column: 1 / -1;
+	grid-row:  1 / -1;
+	object-fit: cover;
+}
+
+.plus-hover {
+	 background: rgba(27, 188, 155, 0.5);
+	 border-radius: 5px;
+      grid-column: 1 / -1;
+      grid-row: 1/ -1;
+      position: relative;
+      display: grid;
+      padding: 10px;
+      place-items: center center;
+      transition: 0.2s;
+      transform: translateY(-100%);
+}
+
+.plus-hover button {
+	background: none;
+      color: white;
+      padding: 5px;
+      font-weight: bold;
+}
+
+
+.imgItem:hover .plus-hover {
+	transform: translateY(0);
+}
+
+.imgItem:hover img {
+	filter: blur(2px);
 }
 
 
@@ -139,9 +176,57 @@ button.btn-style {
 	border-radius: 5px;
 }
 
+/* Modal */
+
+
+div.modal-window {
+	position:  fixed;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 0 15%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+  	transition: all 0.35s ease-in;
+}
+
+.modal-window.modal-open {
+	z-index: 10;
+	visibility: visible;
+	opacity: 1;
+	transition: all 0.35s ease-in;
+}
+
+.modal-content {
+	display: grid;
+	grid-template-columns: auto-fit;
+	justify-items: center;
+	text-align: center;
+	border: 3px solid #1bbc9b;
+	border-radius: 20px;
+	background: white;
+	overflow: auto;
+}
+
+.modal-content .aesthetic-design div {
+	display: block;
+	background: rgba(255, 255, 255, 1.0);
+	height: 3px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.close {
+	justify-self: end;
+	font-size: 25px;
+	color: #1bbc9b;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+
 /* Responsives */
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 	[aria-controls="nav-list"] {
 		display: block;
 		justify-content: end;
@@ -162,8 +247,12 @@ button.btn-style {
 	.images {
 		display: grid;
 		grid-gap: 20px;
-		grid-template-columns: repeat(2, auto);
+		grid-template-columns: repeat(2, 1fr);
 		justify-content: center;
 		align-items: center;
+	}
+
+	.modal-window {
+		overflow: scroll;
 	}
 }
