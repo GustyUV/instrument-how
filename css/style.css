@@ -236,9 +236,25 @@ section.about {
 
 /* Contact */
 
-input.border-bot {
+.contact {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+}
+
+#contactForm {
+	grid-column: 1 / -1;
+}
+
+
+.border-bot {
 	border: 0;
-	border-bottom: 2px solid gray;
+	border-bottom: 1px solid rgba(123, 123, 123, 0.5);
+}
+
+.btn-submit {
+	background: rgba(27, 188, 155, 1);
+	border-radius: 8px;
 }
 
 /* Responsives */
