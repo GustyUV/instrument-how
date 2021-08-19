@@ -223,6 +223,23 @@ div.modal-window {
 	margin-right: 10px;
 }
 
+/* About */
+section.about {
+	background: #1bbc9b;
+}
+
+.about .text-section {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+}
+
+/* Contact */
+
+input.border-bot {
+	border: 0;
+	border-bottom: 2px solid gray;
+}
 
 /* Responsives */
 
@@ -252,7 +269,14 @@ div.modal-window {
 		align-items: center;
 	}
 
+	/* About */
+
 	.modal-window {
 		overflow: scroll;
+	}
+
+	.about .text-section {
+		display: grid;
+		grid-template-columns: 1fr;
 	}
 }
