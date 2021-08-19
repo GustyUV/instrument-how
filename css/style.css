@@ -4,10 +4,14 @@ body {
 
 /* Nav Styles */
 
-.header {
+.header, .footer {
 	background: #2d3e50;
 	color: white;
 	padding: 0 100px;
+}
+
+.header {
+	z-index: 1;
 }
 
 .title {
@@ -19,7 +23,7 @@ body {
 	grid-template-columns: 2fr minmax(100px, 1fr);
 }
 
-button.btn-style {
+.btn-style {
 	background: #1ebc9b;
 	font-weight: bold;
 	color: white;
@@ -180,7 +184,7 @@ div.imgItem {
 
 
 div.modal-window {
-	position:  fixed;
+	/*position:  fixed;*/
 	background: rgba(0, 0, 0, 0.7);
 	padding: 0 15%;
 	height: 100%;
@@ -190,7 +194,7 @@ div.modal-window {
 }
 
 .modal-window.modal-open {
-	z-index: 10;
+	z-index: 999;
 	visibility: visible;
 	opacity: 1;
 	transition: all 0.35s ease-in;
@@ -257,6 +261,27 @@ section.about {
 	border-radius: 8px;
 }
 
+/* Footer */
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+
+.footer-grid div a {
+
+	margin-top: 15px;
+}
+
+div.copyright {
+	background: #1a252f;
+	/*width: 100%;*/
+}
+
+
+
 /* Responsives */
 
 @media (max-width: 1000px) {
@@ -294,5 +319,14 @@ section.about {
 	.about .text-section {
 		display: grid;
 		grid-template-columns: 1fr;
+	}
+
+	/* Footer */
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-items: center;
+		align-items: center;
 	}
 }
